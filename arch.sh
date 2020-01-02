@@ -1,3 +1,5 @@
+#!/bin/bash
+
 mkfs.ext4 /dev/sda3 -L "Arch"
 mount /dev/sda3 /mnt
 mkfs.fat /dev/sda1
@@ -12,4 +14,5 @@ rm /etc/pacman.d/mirrorlist1
 pacman -Syy
 pacstrap /mnt base linux linux-firmware base-devel
 genfstab -L -p -P /mnt >> /mnt/etc/fstab
-arch-chroot /mnt sh -c "$(curl -fsSL git.io/JexzX)"
+wget git.io/JexzX
+sh JexzX | arch-chroot /mnt
