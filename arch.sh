@@ -1,5 +1,26 @@
 #!/bin/bash
 
+(
+  echo g;
+  echo n;
+  echo 1;
+  echo;
+  echo +1G;
+  echo t;
+  echo 1;
+  echo n;
+  echo 2;
+  echo;
+  echo +8G;
+  echo t;
+  echo 2;
+  echo 19;
+  echo n;
+  echo 3;
+  echo;
+  echo;
+  echo w;
+) | fdisk /dev/sda
 mkfs.ext4 /dev/sda3 -L "Arch"
 mount /dev/sda3 /mnt
 mkfs.fat /dev/sda1
