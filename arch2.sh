@@ -1,4 +1,4 @@
-#!/bin/bas
+#!/bin/bash
 
 echo pacman -S nano neofetch screenfetch mc --noconfirm
 echo loadkeys ru
