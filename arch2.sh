@@ -24,9 +24,5 @@ echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\nop
 clear
 echo "Введите пароль для рута"
 passwd
-echo Lapochka01
-echo Lapochka01
 echo "Введите пароль для пользователя"
 passwd igorek
-echo Lapochka01
-echo Lapochka01
