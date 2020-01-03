@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 pacman -S nano neofetch screenfetch mc --noconfirm
 loadkeys ru
 setfont cyr-sun16
@@ -17,10 +16,16 @@ useradd -G wheel -s /bin/bash -m igorek
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers1
 cat /etc/sudoers >> /etc/sudoers1
 mv /etc/sudoers1 /etc/sudoers
-rm /etc/sudoers1
-passwd
-passwd igorek
-pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd --noconfirm
+pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd networkmanager network-manager-applet ppp --noconfirm
 bootctl install
 echo -e "default arch\ntimeout 5\neditor 1" >> /boot/loader/loader.conf
 echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 rw" >> /boot/loader/entries/arch.conf
+clear
+echo "Введите пароль для рута"
+passwd
+echo Lapochka01
+echo Lapochka01
+echo "Введите пароль для пользователя"
+passwd igorek
+echo Lapochka01
+echo Lapochka01

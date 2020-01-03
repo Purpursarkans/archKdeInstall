@@ -32,9 +32,9 @@ echo -e "#Russia\nServer = https://mirror.rol.ru/archlinux/\$repo/os/\$arch\nSer
 cat /etc/pacman.d/mirrorlist >> /etc/pacman.d/mirrorlist1
 mv /etc/pacman.d/mirrorlist1 /etc/pacman.d/mirrorlist
 pacman -Syy
-pacstrap /mnt base linux linux-firmware base-devel
+pacstrap /mnt base linux linux-firmware base-devel wget
 genfstab -L -p -P /mnt >> /mnt/etc/fstab
-wget git.io/JexzX 
+arch-chroot /mnt wget git.io/JexzX 
 arch-chroot /mnt sh JexzX
 umount -R /mnt
 echo "end"
