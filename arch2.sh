@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S nano neofetch --noconfirm
+pacman -S nano neofetch screenfetch mc --noconfirm
 loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
@@ -16,10 +16,17 @@ useradd -G wheel -s /bin/bash -m igorek
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers1
 cat /etc/sudoers >> /etc/sudoers1
 mv /etc/sudoers1 /etc/sudoers
-pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd --noconfirm
+pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd networkmanager network-manager-applet ppp --noconfirm
+systemctl enable NetworkManager
 bootctl install
-echo -e "default arch\ntimeout 0\neditor 1" >> /boot/loader/loader.conf
+echo -e "default arch\ntimeout 5\neditor 1" >> /boot/loader/loader.conf
 echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 rw" >> /boot/loader/entries/arch.conf
+sudo pacman -S xorg-server xorg-xinit
+echo "exec startkde" > ~/.xinitrc
+sudo pacman -S plasma-desktop
+sudo pacman -S sddm
+sudo systemctl enable sddm
+sudo pacman -S konsole dolphin firefox kate
 clear
 echo "Введите пароль для рута"
 passwd
