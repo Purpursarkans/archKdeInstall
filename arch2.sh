@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S nano neofetch screenfetch mc --noconfirm
+pacman -S nano neofetch --noconfirm
 loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
