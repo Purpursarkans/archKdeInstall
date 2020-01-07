@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S nano neofetch screenfetch mc --noconfirm
+pacman -S nano neofetch --noconfirm
 loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
@@ -16,7 +16,7 @@ useradd -G wheel -s /bin/bash -m igorek
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers1
 cat /etc/sudoers >> /etc/sudoers1
 mv /etc/sudoers1 /etc/sudoers
-pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd networkmanager network-manager-applet ppp --noconfirm
+pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd --noconfirm
 systemctl enable NetworkManager
 bootctl install
 echo -e "default arch\ntimeout 5\neditor 1" >> /boot/loader/loader.conf
