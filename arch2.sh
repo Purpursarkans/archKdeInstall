@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S nano neofetch --noconfirm
+pacman -S nano --noconfirm
 loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
@@ -20,9 +20,6 @@ pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd --noconfirm
 bootctl install
 echo -e "default arch\ntimeout 0\neditor 1" >> /boot/loader/loader.conf
 echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 rw" >> /boot/loader/entries/arch.conf
-pacman -S xorg --noconfirm
-pacman -S sddm --noconfirm
-pacman -S plasma --noconfirm
 clear
 echo "Введите пароль для рута"
 passwd
