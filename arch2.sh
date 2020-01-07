@@ -20,12 +20,6 @@ pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd --noconfirm
 bootctl install
 echo -e "default arch\ntimeout 0\neditor 1" >> /boot/loader/loader.conf
 echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 rw" >> /boot/loader/entries/arch.conf
-sudo pacman -S xorg-server xorg-xinit --noconfirm
-echo "exec startkde" > ~/.xinitrc
-sudo pacman -S plasma-desktop --noconfirm
-sudo pacman -S sddm --noconfirm
-sudo systemctl enable sddm
-sudo pacman -S konsole dolphin firefox kate --noconfirm
 clear
 echo "Введите пароль для рута"
 passwd
