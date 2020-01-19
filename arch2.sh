@@ -39,6 +39,8 @@ pacman -S xorg-server xorg-xinit --noconfirm
 echo "exec startkde" > ~/.xinitrc
 pacman -S plasma --noconfirm
 pacman -S konsole dolphin firefox kate --noconfirm
+pacman -Rs discover --noconfirm
+
 systemctl enable sddm
 systemctl enable NetworkManager
 
