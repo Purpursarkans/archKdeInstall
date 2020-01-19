@@ -31,7 +31,7 @@ passwd igorek
 
 
 
-
+sudo pacman -S networkmanager --noconfirm
 
 
 sudo pacman -S xorg-server xorg-xinit --noconfirm
