@@ -41,3 +41,5 @@ pacman -S plasma --noconfirm
 pacman -S konsole dolphin firefox kate --noconfirm
 systemctl enable sddm
 systemctl enable NetworkManager
+
+exit
