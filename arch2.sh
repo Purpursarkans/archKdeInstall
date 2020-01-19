@@ -32,7 +32,7 @@ passwd igorek
 
 
 sudo pacman -S networkmanager --noconfirm
-
+sudo systemctl enable networkmanager
 
 sudo pacman -S xorg-server xorg-xinit --noconfirm
 echo "exec startkde" > ~/.xinitrc
