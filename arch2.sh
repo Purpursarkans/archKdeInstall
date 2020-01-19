@@ -31,12 +31,13 @@ passwd igorek
 
 
 
-sudo pacman -S networkmanager --noconfirm
-sudo systemctl enable networkmanager
+pacman -S networkmanager --noconfirm
+systemctl enable networkmanager
 
-sudo pacman -S xorg-server xorg-xinit --noconfirm
+
+pacman -S xorg-server xorg-xinit --noconfirm
 echo "exec startkde" > ~/.xinitrc
-sudo pacman -S plasma --noconfirm
-sudo pacman -S sddm --noconfirm
-sudo systemctl enable sddm
-sudo pacman -S konsole dolphin firefox kate --noconfirm
+pacman -S plasma --noconfirm
+pacman -S sddm --noconfirm
+systemctl enable sddm
+pacman -S konsole dolphin firefox kate --noconfirm
