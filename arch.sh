@@ -5,7 +5,7 @@
   echo n;
   echo 1;
   echo;
-  echo +1G;
+  echo +200m;
   echo t;
   echo 1;
   echo n;
