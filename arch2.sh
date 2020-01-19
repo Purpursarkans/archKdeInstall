@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pacman -S nano --noconfirm
+pacman -S nano vim --noconfirm
 loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
