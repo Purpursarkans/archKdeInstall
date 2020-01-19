@@ -25,3 +25,18 @@ echo "Введите пароль для рута"
 passwd
 echo "Введите пароль для пользователя"
 passwd igorek
+
+
+
+
+
+
+
+
+
+sudo pacman -S xorg-server xorg-xinit --noconfirm
+echo "exec startkde" > ~/.xinitrc
+sudo pacman -S plasma --noconfirm
+sudo pacman -S sddm --noconfirm
+sudo systemctl enable sddm
+sudo pacman -S konsole dolphin firefox kate --noconfirm
