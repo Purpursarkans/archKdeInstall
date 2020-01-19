@@ -20,14 +20,6 @@ pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd --noconfirm
 bootctl install
 echo -e "default arch\ntimeout 0\neditor 1" >> /boot/loader/loader.conf
 echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 rw" >> /boot/loader/entries/arch.conf
-clear
-echo "Введите пароль для рута"
-passwd
-echo "Введите пароль для пользователя"
-passwd igorek
-
-
-
 
 
 
@@ -43,5 +35,15 @@ pacman -Rs discover --noconfirm
 
 systemctl enable sddm
 systemctl enable NetworkManager
+
+
+
+
+clear
+echo "Введите пароль для рута"
+passwd
+echo "Введите пароль для пользователя"
+passwd igorek
+
 
 exit
