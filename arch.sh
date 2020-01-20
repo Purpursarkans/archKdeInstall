@@ -37,4 +37,10 @@ genfstab -L -p -P /mnt >> /mnt/etc/fstab
 arch-chroot /mnt wget git.io/JexzX 
 arch-chroot /mnt sh JexzX
 umount -R /mnt
-echo "end"
+clear
+echo "end install"
+echo "end install"
+echo "end install"
+echo "turn off pc and disconnect the disk with archlinux"
+echo "auto shutdown via 5 minute"
+shutdown +5
