@@ -27,6 +27,8 @@ pacman -S plasma --noconfirm
 pacman -S konsole dolphin firefox kate --noconfirm
 pacman -Rs discover --noconfirm
 
+pacman -S xf86-video-ati mesa lib32-mesa
+
 systemctl enable sddm
 systemctl enable NetworkManager
 
