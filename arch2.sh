@@ -26,6 +26,9 @@ echo "exec startkde" > ~/.xinitrc
 pacman -S plasma --noconfirm
 pacman -S konsole dolphin firefox kate ark aspell-ru --noconfirm
 
+echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
+
 pacman -Rs discover --noconfirm
 
 pacman -S xf86-video-ati mesa lib32-mesa
