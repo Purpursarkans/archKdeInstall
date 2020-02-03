@@ -24,7 +24,7 @@ echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\nop
 pacman -S xorg-server xorg-xinit --noconfirm
 echo "exec startkde" > ~/.xinitrc
 pacman -S plasma --noconfirm
-pacman -S konsole dolphin firefox kate --noconfirm
+pacman -S konsole dolphin firefox kate ark --noconfirm
 pacman -Rs discover --noconfirm
 
 pacman -S xf86-video-ati mesa lib32-mesa
