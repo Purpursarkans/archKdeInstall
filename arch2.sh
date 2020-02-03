@@ -32,7 +32,7 @@ pacman -S xf86-video-ati mesa lib32-mesa
 systemctl enable sddm
 systemctl enable NetworkManager
 cd ~
-ecgo "export EDITOR=nano" >> .bashrc
+echo "export EDITOR=nano" >> .bashrc
 clear
 echo "Введите пароль для рута"
 passwd
