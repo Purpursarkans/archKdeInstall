@@ -24,7 +24,7 @@ echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\nop
 pacman -S xorg-server xorg-xinit --noconfirm
 echo "exec startkde" > ~/.xinitrc
 pacman -S plasma --noconfirm
-pacman -S konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle --noconfirm
+pacman -S konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp --noconfirm
 
 echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 pacman -S steam --noconfirm
