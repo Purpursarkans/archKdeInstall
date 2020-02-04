@@ -27,7 +27,7 @@ pacman -S plasma --noconfirm
 pacman -S konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp htop --noconfirm
 
 echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
-pacman -S steam alsa-utils discord --noconfirm
+pacman -S steam alsa-utils simplescreenrecorder discord --noconfirm
 
 pacman -Rs discover --noconfirm
 
