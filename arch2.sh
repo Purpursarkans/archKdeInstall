@@ -26,7 +26,7 @@ echo "exec startkde" > ~/.xinitrc
 pacman -S plasma --noconfirm
 
 echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
-pacman -Suy konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp htop steam alsa-utils simplescreenrecorder discord fasm --noconfirm
+pacman -Suy gwenview kimageformats kipi-plugins kamera konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp htop steam alsa-utils simplescreenrecorder discord fasm --noconfirm
 
 pacman -Rs discover --noconfirm
 
