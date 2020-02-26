@@ -1,5 +1,8 @@
 #!/bin/bash
 
+hostname=$(cat hostname.txt)
+username=$(cat username.txt)
+
 pacman -S nano vim --noconfirm
 loadkeys ru
 setfont cyr-sun16
@@ -10,9 +13,9 @@ export LANG=ru_RU.UTF-8
 echo -e "KEYMAP=ru\nFONT=cyr-sun16" >> /etc/vconsole.conf
 ln -sf /usr/share/zoneinfo/Europe/Saratov /etc/localtime
 hwclock --systohc
-echo "potato-pc" >> /etc/hostname
+echo $hostname >> /etc/hostname
 echo -e "127.0.0.1	localhost\n::1			localhost\n127.0.1.1	potato-pc.localdomain	potato-pc" >> /etc/hosts 
-useradd -G wheel -s /bin/bash -m igorek
+useradd -G wheel -s /bin/bash -m $username
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers1
 cat /etc/sudoers >> /etc/sudoers1
 mv /etc/sudoers1 /etc/sudoers
@@ -37,9 +40,9 @@ systemctl enable NetworkManager
 cd ~
 echo "export EDITOR=nano" >> .bashrc
 clear
-echo "Введите пароль для рута"
+echo "Enter password for root"
 passwd
-echo "Введите пароль для пользователя"
-passwd igorek
+echo "Enter password for $username"
+passwd $username
 
 exit

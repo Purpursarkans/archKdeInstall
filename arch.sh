@@ -1,17 +1,28 @@
 #!/bin/bash
 
+echo "!!!write all the names together!!!"
+read -p "Enter username (on eng)(example: igorek): " username
+read -p "Enter hostname (on eng)(example: potato-pc): " hostname
+read -p "Enter swap size (on num)(example: 8): " swap
+
+
+echo $username >> username.txt
+echo $hostname >> hostname.txt
+
+swap=+swapG
+
 (
   echo g;
   echo n;
   echo 1;
   echo;
-  echo +200m;
+  echo +100m;
   echo t;
   echo 1;
   echo n;
   echo 2;
   echo;
-  echo +8G;
+  echo $swap;
   echo t;
   echo 2;
   echo 19;
@@ -21,7 +32,7 @@
   echo;
   echo w;
 ) | fdisk /dev/sda
-mkfs.ext4 /dev/sda3 -L "Arch"
+mkfs.ext4 /dev/sda3 -L "Arch Linux"
 mount /dev/sda3 /mnt
 mkfs.fat /dev/sda1
 mkdir -p /mnt/boot
@@ -34,7 +45,11 @@ mv /etc/pacman.d/mirrorlist1 /etc/pacman.d/mirrorlist
 pacman -Syy
 pacstrap /mnt base linux linux-firmware base-devel wget
 genfstab -L -p -P /mnt >> /mnt/etc/fstab
-arch-chroot /mnt wget git.io/JexzX 
+arch-chroot /mnt wget git.io/JexzX
+
+mv username.txt /mnt
+mv hostname.txt /mnt
+
 arch-chroot /mnt sh JexzX
 umount -R /mnt
 clear
