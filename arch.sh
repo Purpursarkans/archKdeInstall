@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo "!!!write all the names together (don't use space)!!!"
+echo "!!!write in small letters!!!"
 echo "!!!dont use special symbol (example: _ $ * . , ! # & ? ; : ( ) and other(can only "-" (hyphen)))!!!"
 read -p "Enter username (on eng)(example: igorek): " username
 read -p "Enter hostname (on eng)(example: potato-pc): " hostname
