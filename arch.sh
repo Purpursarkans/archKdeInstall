@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 echo "!!!write all the names together (don't use space)!!!"
 echo "!!!write in small letters!!!"
 echo "!!!dont use special symbol (example: _ $ * . , ! # & ? ; : ( ) and other(can only "-" (hyphen)))!!!"
@@ -10,7 +11,7 @@ read -p "Enter swap size (on num)(example: 8): " swap
 
 echo $username >> username.txt
 echo $hostname >> hostname.txt
-
+pacman -Syy
 add=+
 g=G
 swap=(${add}${swap}${g})
