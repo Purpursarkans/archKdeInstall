@@ -11,7 +11,7 @@ read -p "Enter swap size (on num)(example: 8): " swap
 
 echo $username >> username.txt
 echo $hostname >> hostname.txt
-pacman -Syy
+
 add=+
 g=G
 swap=(${add}${swap}${g})
