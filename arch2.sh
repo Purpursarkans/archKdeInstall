@@ -34,7 +34,9 @@ pacman -Suy gwenview kimageformats kipi-plugins kamera konsole dolphin firefox k
 pacman -Rs discover --noconfirm
 
 pacman -S xf86-video-ati mesa lib32-mesa --noconfirm
+pacman -S earlyoom neofetch kdekonnect
 
+systemctl enable earlyoom
 systemctl enable sddm
 systemctl enable NetworkManager
 cd ~
