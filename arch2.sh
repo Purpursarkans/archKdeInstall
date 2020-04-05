@@ -34,7 +34,7 @@ pacman -Suy gwenview kimageformats kipi-plugins kamera konsole dolphin firefox k
 pacman -Rs discover --noconfirm
 
 pacman -S xf86-video-ati mesa lib32-mesa --noconfirm
-pacman -S earlyoom neofetch kdekonnect p7zip --noconfirm
+pacman -S earlyoom neofetch kdekonnect p7zip blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
 
 systemctl enable earlyoom
 systemctl enable sddm
