@@ -36,6 +36,8 @@ pacman -Rs discover --noconfirm
 pacman -S xf86-video-ati mesa lib32-mesa --noconfirm
 pacman -S earlyoom neofetch kdekonnect p7zip blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
 
+pacman -S virtualbox-guest-utils virtualbox-guest-modules-arch --noconfirm
+
 systemctl enable earlyoom
 systemctl enable sddm
 systemctl enable NetworkManager
