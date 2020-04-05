@@ -1,3 +1,3 @@
 #!/bin/bash
 
-yay -S minecraft-launcher amidst aseprite magicavoxel
+yay -S minecraft-launcher amidst aseprite magicavoxel logmein-hamachi
