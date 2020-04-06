@@ -34,10 +34,11 @@ pacman -Suy gwenview kimageformats kipi-plugins kamera konsole dolphin firefox k
 pacman -Rs discover --noconfirm
 
 pacman -S xf86-video-ati mesa lib32-mesa mesa-vdpau lib32-mesa-vdpau --noconfirm
-pacman -S earlyoom neofetch kdekonnect mpv p7zip virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
+pacman -S earlyoom neofetch kdekonnect mpv p7zip virtualbox-guest-iso virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
 modprobe vboxdrv
 pacman -S dkms virtualbox-guest-utils virtualbox-guest-modules-arch --noconfirm
 
+systemctl enable vboxservice 
 systemctl enable earlyoom
 systemctl enable sddm
 systemctl enable NetworkManager
