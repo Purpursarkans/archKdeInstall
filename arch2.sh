@@ -33,7 +33,7 @@ pacman -S gwenview kimageformats kipi-plugins kamera konsole dolphin firefox kat
 
 pacman -Rs discover --noconfirm
 
-pacman -S xf86-video-ati mesa lib32-mesa mesa-vdpau lib32-mesa-vdpau --noconfirm
+pacman -S xf86-video-ati mesa lib32-mesa mesa-vdpau lib32-mesa-vdpauv mesa-demos lib32-mesa-demos --noconfirm
 pacman -S earlyoom neofetch kdeconnect mpv p7zip virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
 modprobe vboxdrv
 
