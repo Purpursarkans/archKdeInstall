@@ -41,8 +41,8 @@ systemctl enable vboxservice
 systemctl enable earlyoom
 systemctl enable sddm
 systemctl enable NetworkManager
-cd ~
-echo "export EDITOR=nano" >> .bashrc
+
+echo "export EDITOR=nano" >> /home/${username}/.bashrc
 clear
 echo "Enter password for root"
 passwd
