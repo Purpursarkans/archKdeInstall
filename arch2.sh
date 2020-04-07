@@ -3,7 +3,7 @@
 hostname=$(cat hostname.txt)
 username=$(cat username.txt)
 
-pacman -S nano vim --noconfirm
+pacman -Sy nano vim --noconfirm
 loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
@@ -29,14 +29,13 @@ echo "exec startkde" > ~/.xinitrc
 pacman -S plasma --noconfirm
 
 echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
-pacman -Suy gwenview kimageformats kipi-plugins kamera konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp htop steam pulseaudio-alsa lib32-alsa-plugins lib32-libpulse alsa-utils simplescreenrecorder discord fasm --noconfirm
+pacman -S gwenview kimageformats kipi-plugins kamera konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp htop steam pulseaudio-alsa lib32-alsa-plugins lib32-libpulse alsa-utils simplescreenrecorder discord fasm --noconfirm
 
 pacman -Rs discover --noconfirm
 
 pacman -S xf86-video-ati mesa lib32-mesa mesa-vdpau lib32-mesa-vdpau --noconfirm
-pacman -S earlyoom neofetch kdekonnect mpv p7zip virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
+pacman -S earlyoom neofetch kdeconnect mpv p7zip virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
 modprobe vboxdrv
-pacman -S dkms virtualbox-guest-utils virtualbox-guest-modules-arch virtualbox-guest-iso --noconfirm
 
 systemctl enable vboxservice 
 systemctl enable earlyoom
