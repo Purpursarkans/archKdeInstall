@@ -37,7 +37,6 @@ pacman -S xf86-video-ati mesa lib32-mesa mesa-vdpau lib32-mesa-vdpauv mesa-demos
 pacman -S earlyoom neofetch kdeconnect mpv p7zip virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
 modprobe vboxdrv
 
-systemctl enable vboxservice 
 systemctl enable earlyoom
 systemctl enable sddm
 systemctl enable NetworkManager
