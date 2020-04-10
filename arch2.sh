@@ -3,7 +3,14 @@
 hostname=$(cat hostname.txt)
 username=$(cat username.txt)
 
-pacman -Sy nano vim --noconfirm
+pacman -Suuyy plasma xorg-server xorg-xinit efibootmgr iw wpa_supplicant dialog netctl dhcpcd gwenview kimageformats kipi-plugins kamera konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp htop steam pulseaudio-alsa lib32-alsa-plugins lib32-libpulse alsa-utils simplescreenrecorder discord fasm xf86-video-ati mesa lib32-mesa mesa-vdpau lib32-mesa-vdpauv mesa-demos lib32-mesa-demos earlyoom neofetch kdeconnect mpv p7zip virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape nano vim --noconfirm
+
+systemctl enable earlyoom
+systemctl enable sddm
+systemctl enable NetworkManager
+
+pacman -Rs discover --noconfirm
+
 loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
@@ -19,30 +26,16 @@ useradd -G wheel -s /bin/bash -m $username
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers1
 cat /etc/sudoers >> /etc/sudoers1
 mv /etc/sudoers1 /etc/sudoers
-pacman -S  efibootmgr iw wpa_supplicant dialog netctl dhcpcd --noconfirm
 bootctl install
 echo -e "default arch\ntimeout 0\neditor 1" >> /boot/loader/loader.conf
 echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 rw" >> /boot/loader/entries/arch.conf
 
-pacman -S xorg-server xorg-xinit --noconfirm
 echo "exec startkde" > ~/.xinitrc
-pacman -S plasma --noconfirm
-
 echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
-pacman -S gwenview kimageformats kipi-plugins kamera konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp htop steam pulseaudio-alsa lib32-alsa-plugins lib32-libpulse alsa-utils simplescreenrecorder discord fasm --noconfirm
-
-pacman -Rs discover --noconfirm
-
-pacman -S xf86-video-ati mesa lib32-mesa mesa-vdpau lib32-mesa-vdpauv mesa-demos lib32-mesa-demos --noconfirm
-pacman -S earlyoom neofetch kdeconnect mpv p7zip virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape --noconfirm
-modprobe vboxdrv
-
-systemctl enable earlyoom
-systemctl enable sddm
-systemctl enable NetworkManager
 
 echo "export EDITOR=nano" >> /home/${username}/.bashrc
 clear
+
 echo "Enter password for root"
 passwd
 echo "Enter password for $username"
