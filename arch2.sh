@@ -3,6 +3,7 @@
 hostname=$(cat hostname.txt)
 username=$(cat username.txt)
 
+echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
 pacman -Suuyy plasma xorg-server xorg-xinit efibootmgr iw wpa_supplicant dialog netctl dhcpcd gwenview kimageformats kipi-plugins kamera konsole dolphin firefox kate ark aspell-ru telegram-desktop spectacle gimp htop steam pulseaudio-alsa lib32-alsa-plugins lib32-libpulse alsa-utils simplescreenrecorder discord fasm xf86-video-ati mesa lib32-mesa mesa-vdpau lib32-mesa-vdpau mesa-demos lib32-mesa-demos earlyoom neofetch kdeconnect mpv p7zip virtualbox virtualbox-host-modules-arch blender krita audacity kdevelop cmake qbittorrent inkscape nano vim --noconfirm
 
 systemctl enable earlyoom
@@ -31,7 +32,7 @@ echo -e "default arch\ntimeout 0\neditor 1" >> /boot/loader/loader.conf
 echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 rw" >> /boot/loader/entries/arch.conf
 
 echo "exec startkde" > ~/.xinitrc
-echo -e "[multilib]\nInclude = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+
 
 echo "export EDITOR=nano" >> /home/${username}/.bashrc
 clear
