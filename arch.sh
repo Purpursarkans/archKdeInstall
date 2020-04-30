@@ -44,11 +44,10 @@ mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 mkswap /dev/sda2 -L "swap"
 swapon /dev/sda2
-echo -e "#Russia\nServer = https://mirror.rol.ru/archlinux/\$repo/os/\$arch\nServer = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch" >> /etc/pacman.d/mirrorlist1
-cat /etc/pacman.d/mirrorlist >> /etc/pacman.d/mirrorlist1
-mv /etc/pacman.d/mirrorlist1 /etc/pacman.d/mirrorlist
+pacman -Sy reflector
+reflector --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syy
-pacstrap /mnt base linux linux-firmware base-devel wget
+pacstrap /mnt base linux linux-firmware base-devel wget reflector
 genfstab -L -p -P /mnt >> /mnt/etc/fstab
 arch-chroot /mnt wget git.io/JexzX
 
