@@ -45,7 +45,7 @@ mount /dev/sda1 /mnt/boot
 mkswap /dev/sda2 -L "swap"
 swapon /dev/sda2
 pacman -Sy reflector
-reflector --sort rate --save /etc/pacman.d/mirrorlist
+reflector --verbose --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syy
 pacstrap /mnt base linux linux-firmware base-devel wget reflector
 genfstab -L -p -P /mnt >> /mnt/etc/fstab
