@@ -43,4 +43,6 @@ passwd
 echo "Enter password for $username"
 passwd $username
 
+rm hostname.txt username.txt JexzX
+
 exit
