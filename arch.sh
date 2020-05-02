@@ -44,7 +44,7 @@ mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 mkswap /dev/sda2 -L "swap"
 swapon /dev/sda2
-pacman -Sy reflector
+pacman -Sy reflector --noconfirm
 reflector --verbose --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syy
 pacstrap /mnt base linux linux-firmware base-devel wget reflector
