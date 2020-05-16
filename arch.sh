@@ -6,7 +6,7 @@ echo "!!!write in small letters!!!"
 echo "!!!dont use special symbol (example: _ $ * . , ! # & ? ; : ( ) and other(can only "-" (hyphen)))!!!"
 read -p "Enter username (on eng)(example: igorek): " username
 read -p "Enter hostname (on eng)(example: potato-pc): " hostname
-read -p "Enter swap size (on num)(example: 8): " swap
+read -p "Enter swap size in gb (on num)(example: 8): " swap
 
 
 echo $username >> username.txt
