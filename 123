@@ -1,0 +1,8 @@
+##enable multilib v /etc/pacman.conf a to rabotat ne budet, y mena tyt 32 bit libi. 92-93 string raskomentiryi
+
+pacman -S man unrar ttf-roboto noto-fonts noto-fonts-cjk adobe-source-han-sans-cn-fonts adobe-source-han-serif-cn-fonts ttf-dejavu plasma xorg-server xorg-xinit iw wpa_supplicant dialog netctl dhcpcd gwenview kimageformats kipi-plugins kamera konsole dolphin firefox kate ark aspell-ru telegram-desktop flameshot gimp htop steam pulseaudio-alsa lib32-alsa-plugins lib32-libpulse alsa-utils simplescreenrecorder discord fasm earlyoom neofetch mpv p7zip blender audacity cmake qbittorrent inkscape reflector
+
+
+systemctl enable earlyoom
+systemctl enable sddm
+systemctl enable NetworkManager
