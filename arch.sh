@@ -21,7 +21,7 @@ swap=(${add}${swap}${g})
   echo n;
   echo 1;
   echo;
-  echo +100m;
+  echo +500m;
   echo t;
   echo 1;
   echo n;
