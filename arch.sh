@@ -4,17 +4,21 @@ clear
 echo "!!!write all the names together (don't use space)!!!"
 echo "!!!write in small letters!!!"
 echo "!!!dont use special symbol (example: _ $ * . , ! # & ? ; : ( ) and other(can only "-" (hyphen)))!!!"
-read -p "Enter username (on eng)(example: igorek): " username
-read -p "Enter hostname (on eng)(example: potato-pc): " hostname
-read -p "Enter swap size in gb (on num)(example: 8): " swap
 
+echo "Enter username (on eng)(example: igorek):"
+read -p ">>> " username
+echo "Enter hostname (on eng)(example: potato-pc):"
+read -p ">>> " hostname
+echo "Enter swap size (on num)(example: 8G or 512MB):"
+read -p ">>> " swap
+echo -e "Enter type system:\n1 - Desktop\n2 - Virtualbox: "
+read -p ">>> " type
 
 echo $username >> username.txt
 echo $hostname >> hostname.txt
 
 add=+
-g=G
-swap=(${add}${swap}${g})
+swap=(${add}${swap})
 
 (
   echo g;
@@ -44,10 +48,8 @@ mkdir -p /mnt/boot
 mount /dev/sda1 /mnt/boot
 mkswap /dev/sda2 -L "swap"
 swapon /dev/sda2
-pacman -Sy reflector --noconfirm
-reflector --verbose --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syy
-pacstrap /mnt base linux linux-firmware base-devel wget reflector
+pacstrap /mnt base linux linux-firmware base-devel wget
 genfstab -L -p -P /mnt >> /mnt/etc/fstab
 arch-chroot /mnt wget https://git.io/JlUWm
 
