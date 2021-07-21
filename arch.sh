@@ -51,12 +51,12 @@ swapon /dev/sda2
 pacman -Syy
 pacstrap /mnt base linux linux-firmware base-devel wget
 genfstab -L -p -P /mnt >> /mnt/etc/fstab
-arch-chroot /mnt wget https://git.io/JlUWm
+arch-chroot /mnt wget https://git.io/JlUMI
 
 mv username.txt /mnt
 mv hostname.txt /mnt
 
-arch-chroot /mnt sh JlUWm
+arch-chroot /mnt sh JlUMI
 umount -R /mnt
 clear
 echo "end install"
