@@ -49,12 +49,12 @@ reflector --verbose --sort rate --save /etc/pacman.d/mirrorlist
 pacman -Syy
 pacstrap /mnt base linux linux-firmware base-devel wget reflector
 genfstab -L -p -P /mnt >> /mnt/etc/fstab
-arch-chroot /mnt wget git.io/JexzX
+arch-chroot /mnt wget https://git.io/JlUWm
 
 mv username.txt /mnt
 mv hostname.txt /mnt
 
-arch-chroot /mnt sh JexzX
+arch-chroot /mnt sh JlUWm
 umount -R /mnt
 clear
 echo "end install"
