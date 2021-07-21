@@ -16,23 +16,21 @@ loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
-echo "LANG=ru_RU.UTF-8" >> /etc/locale.conf
-export LANG=ru_RU.UTF-8
+echo "LANG=en_US.UTF-8" >> /etc/locale.conf
 echo -e "KEYMAP=ru\nFONT=cyr-sun16" >> /etc/vconsole.conf
 ln -sf /usr/share/zoneinfo/Europe/Saratov /etc/localtime
 hwclock --systohc
 echo $hostname >> /etc/hostname
-echo -e "127.0.0.1	localhost\n::1			localhost\n127.0.1.1	potato-pc.localdomain	potato-pc" >> /etc/hosts 
+echo -e "127.0.0.1	localhost\n::1			localhost\n127.0.1.1	$hostname.localdomain	$hostname" >> /etc/hosts
 useradd -G wheel -s /bin/bash -m $username
 echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers1
 cat /etc/sudoers >> /etc/sudoers1
 mv /etc/sudoers1 /etc/sudoers
-bootctl install
-echo -e "default arch\ntimeout 0\neditor 1" >> /boot/loader/loader.conf
-echo -e "title Arch Linux\nlinux /vmlinuz-linux\ninitrd /initramfs-linux.img\noptions root=/dev/sda3 rw" >> /boot/loader/entries/arch.conf
 
-echo "exec startkde" > ~/.xinitrc
-
+pacman -S grub efibootmgr --needed --noconfirm
+grub-install --efi-directory=/boot
+echo "GRUB_DISABLE_OS_PROBER=false" >> /etc/default/grub
+grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "export EDITOR=nano" >> /home/${username}/.bashrc
 clear
