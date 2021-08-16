@@ -16,7 +16,7 @@ loadkeys ru
 setfont cyr-sun16
 echo -e "en_US.UTF-8 UTF-8\nru_RU.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
-echo "LANG=en_US.UTF-8" >> /etc/locale.conf
+echo "LANG=ru_RU.UTF-8" >> /etc/locale.conf
 echo -e "KEYMAP=ru\nFONT=cyr-sun16" >> /etc/vconsole.conf
 ln -sf /usr/share/zoneinfo/Europe/Saratov /etc/localtime
 hwclock --systohc
