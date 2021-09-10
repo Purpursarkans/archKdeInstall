@@ -35,9 +35,9 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo "export EDITOR=nano" >> /home/${username}/.bashrc
 clear
 
-mkdir yay
-cd yay
+
 git clone https://aur.archlinux.org/yay.git
+cd yay
 makepkg -si
 
 echo "Enter password for root"
